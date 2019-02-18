@@ -1,0 +1,31 @@
+<?php
+
+// Title
+function findTitle($html){
+    foreach($html->find('h1') as $element) 
+        return $element . '<br>';
+}
+
+// Price
+function findPrice($content){
+    $price = $content->find('.p-price');
+    return $price[0];
+}
+
+// Thumbnail
+function findThumbnail($content){
+    $thumbnail = $content->find('.img-thumb-item img');
+    return $thumbnail[0]->src;
+}
+
+// Images
+function findImages($content){
+    $images = $content->find('.img-thumb-item img');
+    return $images;
+}
+
+// Print Array
+function printArray($array){
+    foreach($array as $i)
+        echo $i->src . '<br>';
+}
